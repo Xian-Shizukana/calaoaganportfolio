@@ -1,4 +1,7 @@
 ---
+
+import Nav from '../components/Nav.astro';
+
 interface Props {
 	title: string;
 	description?: string;
@@ -20,6 +23,7 @@ const {title = "XianShizukana Portfolio", description = "The portfolio of Sean J
 		<title>{title}</title>
 	</head>
 	<body class="min-h-screen">
+		<Nav />
 		<slot />
 	</body>
 </html>
