@@ -4,14 +4,20 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import '../styles/global.css';
 
-const achievements = [
-  "Grade 11 - 1st - 3rd Quarter Classroom Top #1 with High Honors",
-  "Grade 11 - Subject Proficiency in Emerging Trends and Technologies in Programming & Programming Languages 1",
-  "Grade 11 - Subject Proficiency in Programming Languages 1",
-  "Grade 11 - Best VFX Award in CIIT Senior Highschool Video Campaign",
-  "Grade 12 - 1st - 3rd Quarter Classroom Top #1 with High Honors",
-  "Grade 12 - Subject Proficiency in Introduction to IOT & Industry Readiness",
-  "Grade 12 - CIIT Values Award in Passion - Programming"
+const achievements_g10 = [
+	"- Grade 10 - 1st Quarter with Honors",
+	"- Grade 10 - 2nd and 4th Quarter with High Honors",
+	"- Grade 10 - 1st to 4th Quarter Conduct Award"
+];
+
+const achievements_g11_g12 = [
+  "- Grade 11 - 1st - 3rd Quarter Classroom Top #1 with High Honors",
+  "- Grade 11 - Subject Proficiency in Emerging Trends and Technologies in Programming & Programming Languages 1",
+  "- Grade 11 - Subject Proficiency in Programming Languages 1",
+  "- Grade 11 - Best VFX Award in CIIT Senior Highschool Video Campaign",
+  "- Grade 12 - 1st - 3rd Quarter Classroom Top #1 with High Honors",
+  "- Grade 12 - Subject Proficiency in Introduction to IOT & Industry Readiness",
+  "- Grade 12 - CIIT Values Award in Passion - Programming"
 ];
 
 
@@ -35,15 +41,15 @@ const achievements = [
 				<p class="lg:text-2xl font-mono font-bold text-pink-50 text-justify">I build small, static websites using HTML, CSS, Tailwind, and Astro. Currently building a Linux desktop application using PyQt and Python, focusing on function rather than aesthetic. Published five games in itch.io utilizing Ren'Py and Godot. Aiming to move into AI and Cloud Development. </p>
 			</article>
 			<div class="bg-pink-300 hidden lg:flex lg:flex-1 font-mono text-justify shadow-lg">
-				<img src="/public/about-img.jpg" class="h-full w-full object-cover">
+				<img src="/about-img.jpg" class="h-full w-full object-cover">
 			</div>
 		</div>
 	</section>
 
 	<!-- EDUCATION -->
 	<section class="w-full p-4 lg:px-40 lg:py-12 grid grid-cols-2 lg:grid-cols-3 gap-4 ">
-	 	<Card title="Manila Cathedral School", bullets={["Placeholder", "aaa", "aa", "aa"]}, image="/public/hero-img.jpg", date="2017-2020"/>
-	 	<Card title="CIIT Senior High School", bullets={achievements}/>
-	 	<Card title="CIIT College of Innovation and Integrated Technology"/>
+	 	<Card title="Manila Cathedral School", bullets={achievements_g10}, image="/mcs-img.jpg", date="2013-2023"/>
+	 	<Card title="CIIT Senior High School", bullets={achievements_g11_g12}, image="/cshs-img.jpg", date="2023-2025"/>
+	 	<Card title="CIIT College of Innovation and Integrated Technology", bullets={["- Interweave Scholar"]}, image="/ccollege.png", date="2025-Present"/>
 	</section>
 </Layout>
