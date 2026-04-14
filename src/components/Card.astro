@@ -1,37 +1,58 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
-    title: string;
-    date?: string;
-    list?: string[];
-    isBulleted?: boolean;
-    image?: string;
-    buttonTitle?: string;
-    buttonLink?: string;
-
+  title: string;
+  date?: string;
+  list?: string[];
+  isBulleted?: boolean;
+  image?: string;
+  buttonTitle?: string;
+  buttonLink?: string;
 }
 
-const { title = null, image = null, list = [], date = null, isBulleted = false, buttonLink = null, buttonTitle = "Click me!" } = Astro.props;
+const {
+  title = null,
+  image = null,
+  list = [],
+  date = null,
+  isBulleted = false,
+  buttonLink = null,
+  buttonTitle = "Click me!",
+} = Astro.props;
 ---
 
-<section class=" bg-pink-100 rounded-lg flex flex-col shadow-xl">
+<section class="flex flex-col rounded-lg bg-pink-100 shadow-xl">
+  <!-- Removes image space if none are provided -->
+  {
+    image && (
+      <div class="flex w-full">
+        <img
+          src={image}
+          class="h-30 w-full rounded-lg object-cover md:h-45 lg:h-50"
+        />
+      </div>
+    )
+  }
 
-    <!-- Removes image space if none are provided -->
-    {image && (<div class="flex w-full"><img src={image} class="h-30 md:h-45 lg:h-50 rounded-lg w-full object-cover"></div>)}
+  <article class="flex flex-col p-4">
+    <h1 class="text-md font-extrabold lg:text-xl">{title}</h1>
+    <h2 class="text-md mb-4 font-bold text-pink-800 lg:text-xl">{date}</h2>
 
-    <article class="flex flex-col p-4">
+    <!-- Adds bullet points if isBulleted is true -->
+    <ul class={`text-sm lg:text-lg ${isBulleted ? "list-disc pl-5" : ""}`}>
+      {list.map((item) => <li>{item}</li>)}
+    </ul>
 
-        <h1 class="font-extrabold text-md lg:text-xl">{title}</h1>
-        <h2 class="font-bold text-md lg:text-xl text-pink-800 mb-4">{date}</h2>
-
-        <!-- Adds bullet points if isBulleted is true -->
-        <ul class={`text-sm lg:text-lg ${isBulleted ? "list-disc pl-5" : ""}`}>
-            {list.map(item => (<li>{item}</li>))}
-        </ul>
-
-        {buttonLink && (<a class="bg-transparent hover:bg-pink-500 text-pink-700 text-sm lg:text-lg font-semibold hover:text-white py-2 px-4 border border-pink-500 hover:border-transparent rounded-lg max-w-50" href={buttonLink}>{buttonTitle}</a>)}
-
-    </article>
-    
+    {
+      buttonLink && (
+        <a
+          class="max-w-50 rounded-lg border border-pink-500 bg-transparent px-4 py-2 text-sm font-semibold text-pink-700 hover:border-transparent hover:bg-pink-500 hover:text-white lg:text-lg"
+          href={buttonLink}
+        >
+          {buttonTitle}
+        </a>
+      )
+    }
+  </article>
 </section>
