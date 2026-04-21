@@ -3,14 +3,16 @@ import "../styles/global.css";
 ---
 
 <header
-  class="fixed z-999 w-full bg-pink-200/60 py-5 backdrop-blur-xl lg:px-40"
+  class="fixed z-999 w-full bg-pink-200/60 py-5 backdrop-blur-xl md:px-20 lg:px-40"
 >
-  <nav class="flex justify-center font-bold lg:justify-between">
+  <nav class="flex justify-center font-bold md:justify-between">
     <a href="/"
-      ><h1 class="hidden text-2xl text-pink-600 lg:flex">XianShizukana</h1></a
+      ><h1 class="hidden text-2xl text-pink-600 md:flex">XianShizukana</h1></a
     >
-    <ul class="flex space-x-16 text-2xl text-pink-600">
-      <li class="lg:hidden"><a href="/">Home</a></li>
+    <ul
+      class="flex space-x-10 text-2xl text-pink-600 md:space-x-13 lg:space-x-16"
+    >
+      <li class="md:hidden"><a href="/">Home</a></li>
       <li><a href="/works">Works</a></li>
       <li><a href="#contacts">Contacts</a></li>
     </ul>
