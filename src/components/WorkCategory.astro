@@ -12,7 +12,7 @@ const { link = "/", title = "", image = "/hero-img.png" } = Astro.props;
 
 <a
   class="block w-full bg-cover p-5 text-center text-3xl font-extrabold text-pink-100 transition-transform duration-100 hover:scale-110 lg:p-10 lg:text-5xl"
-  style={`background-image: url(${image});`}
+  style={`background-image: url(/${image});`}
   href={link}
 >
   <h1>{title}</h1>
