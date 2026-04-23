@@ -2,6 +2,10 @@
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Base_Work.astro";
 
+const shiro_desc = [
+  "A game that aims to address academic stress and provide various coping mechanisms to get over that stress. Inspired by Until Then, this game is my most complex and ambitious project. There are 2D platformer mechanics with storytelling and a quiz section. I worked as the lead programmer, and my team are the story writers, music producers, and artists. This was made for our I3 Exhibit, and only the first day was completed. Received positive reviews from the open house visitors, though they said the platforming section was too hard.",
+];
+
 const cronos_desc = [
   "A simple, QR Code based attendance monitoring system. Includes a filtering system to check present students on selected days. Made as part of my team's requirement for our class, Programming Languages 2.",
 ];
@@ -16,6 +20,9 @@ const workshop_desc = [
     title="Shiro's Fantastical Website"
     date="May 10, 2025"
     buttonLink="Hello!"
+    buttonTitle="Download Demo"
+    image="work-shiro.png"
+    list={shiro_desc}
   />
   <Card
     title="C.R.O.N.O.S"
