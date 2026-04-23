@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Base_Main.astro";
+import "../styles/global.css";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Contacts">
+  <section
+    class="flex h-screen w-screen items-center justify-center overflow-hidden bg-pink-800 p-5"
+  >
+    <section class="grid w-full grid-cols-1 gap-5 lg:grid-cols-2">
+      <Card title="Email" list={["seancalaoagan@gmail.com"]} />
+      <Card title="Phone" list={["09171867434"]} />
+      <Card
+        title="Github"
+        buttonLink="https://github.com/Xian-Shizukana"
+        buttonTitle="View Github Profile"
+      />
+      <Card
+        title="Facebook"
+        buttonLink="https://www.facebook.com/seancalaoagan/"
+        buttonTitle="View Facebook Profile"
+      />
+    </section>
+  </section></Layout
+>
